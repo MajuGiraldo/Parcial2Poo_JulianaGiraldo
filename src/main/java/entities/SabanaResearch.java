@@ -29,6 +29,16 @@ public class SabanaResearch {
      * @return The new Summary entry.
      */
     public Summary createSummaryEntry() {
-        return null;
+
+        int activeProjects = 0;
+        for (Group g: groups){
+            activeProjects += g.countActiveProjects();
+        }
+
+        Summary summary = new Summary(activeProjects, LocalDate.now());
+        this.summaries.add(summary);
+
+        return summary;
     }
+
 }

@@ -29,7 +29,8 @@ public abstract class Activity {
      * @return true if the activity is in state pending or active, otherwise return false.
      */
     public boolean isActive() {
-        return false;
+
+        return this.state.equals(ACTIVE_STATE) || this.state.equals(PENDING_STATE);
     }
 
     /**
@@ -37,6 +38,6 @@ public abstract class Activity {
      *
      * @return
      */
-    public abstract Duration getDuration();
+    public abstract Duration getDuration() throws SabanaResearchException;
 
 }
